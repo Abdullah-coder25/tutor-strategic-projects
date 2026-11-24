@@ -1,0 +1,34 @@
+[
+  {
+    "customer": "Productiv",
+    "summary": "Cassie is public only at Productiv's Dallas facility. Productiv also runs a Charlotte campus built around conveyor kitting lines, and a new Gastonia building.",
+    "tutor_known_sites": [
+      {"site": "Dallas, TX (Cassie at the end of the line)", "url": "https://tutorintelligence.com/cassie"}
+    ],
+    "other_sites": [
+      {"site": "Charlotte, NC campus, about 300,000 sq ft", "work": "gift sets, PDQ trays and floor displays on conveyor kitting lines; container receiving and transloading", "url": "https://getproductiv.com/locations/charlotte"},
+      {"site": "Gastonia, NC, new 200,000 sq ft building", "work": "not described separately", "url": "https://getproductiv.com/locations/charlotte"}
+    ]
+  },
+  {
+    "customer": "BetterBody Foods",
+    "summary": "Tutor palletizers run at BetterBody sites in Utah and Massachusetts; which Utah site is not public. Job postings name two Utah sites and one in Massachusetts.",
+    "tutor_known_sites": [
+      {"site": "Utah and Massachusetts facilities (cities not named)", "url": "https://www.automatedwarehouseonline.com/tutor-intelligence-trains-picking-palletizing-robots-data-factory/"}
+    ],
+    "other_sites": [
+      {"site": "Springville, UT warehouse", "work": "order pickers building mixed pallets, which is case-picking work", "url": "https://career.com/job/betterbody-foods-nutrition-llc/order-picker-morning/j202501150912477397463"},
+      {"site": "Lindon, UT production", "work": "filling, capping and labeling lines", "url": "https://www.career.com/job/betterbody-foods-nutrition-llc/machine-operator-night-shift/j202508061030382649010"}
+    ]
+  },
+  {
+    "customer": "Y International",
+    "summary": "Tutor runs four robots at Y International's Lyndhurst, NJ export center. The company also runs an export facility in Brookshire, TX with no public Tutor deployment.",
+    "tutor_known_sites": [
+      {"site": "Lyndhurst, NJ export center (four robots)", "url": "https://www.packworld.com/secondary-packaging/robotics/article/22914613/cpg-exporter-y-international-invests-in-aibased-raas-packaging-automation"}
+    ],
+    "other_sites": [
+      {"site": "Brookshire, TX, about 50,000 sq ft", "work": "packaging and export of dry, frozen and perishable products; the page says it could roughly double in size", "url": "https://yinternational.us.com/who-we-are/our-facility/"}
+    ]
+  }
+]

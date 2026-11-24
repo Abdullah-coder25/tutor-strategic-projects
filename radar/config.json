@@ -1,0 +1,22 @@
+{
+  "_note": "Weights are a starting guess. The backtest is how you find out which ones matter; with real data, refit them.",
+  "weights": {
+    "utilization": 30,
+    "overtime_weeks": 20,
+    "avg_uptime": 10,
+    "assist_drop": 15,
+    "changeovers": 5,
+    "similar_lines": 15,
+    "open_sites": 5
+  },
+  "caps": {
+    "utilization": [0.7, 1.2],
+    "overtime_weeks": [0, 8],
+    "avg_uptime": [0.9, 0.99],
+    "assist_drop": [0, 0.15],
+    "changeovers": [0, 15],
+    "similar_lines": [0, 3],
+    "open_sites": [0, 4]
+  },
+  "horizon_weeks": 8
+}

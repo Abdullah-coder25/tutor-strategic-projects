@@ -1,0 +1,595 @@
+{
+  "as_of_week": 104,
+  "n_sites": 54,
+  "n_accounts": 40,
+  "weights": {
+    "utilization": 30,
+    "overtime_weeks": 20,
+    "avg_uptime": 10,
+    "assist_drop": 15,
+    "changeovers": 5,
+    "similar_lines": 15,
+    "open_sites": 5
+  },
+  "flagged": [
+    {
+      "site": "S008",
+      "account": "Synthetic Account 07",
+      "industry": "Household goods",
+      "task": "Case picking",
+      "score": 72.0,
+      "hours_worked_vs_booked": "112%",
+      "weeks_over_booked_shift": "7 of 8",
+      "uptime": "98.3%",
+      "remote_assist_change_pts": -3.0,
+      "similar_lines_without_robot": 2,
+      "other_sites_without_robots": 2,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 07 (case picking): worked 112% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.3%, remote assists -3.0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 2 similar lines nearby. The account also runs 2 other site(s) without robots, worth a question on the call."
+    },
+    {
+      "site": "S030",
+      "account": "Synthetic Account 22",
+      "industry": "Beverage co-packer",
+      "task": "Kitting",
+      "score": 62.8,
+      "hours_worked_vs_booked": "108%",
+      "weeks_over_booked_shift": "7 of 8",
+      "uptime": "97.6%",
+      "remote_assist_change_pts": 0,
+      "similar_lines_without_robot": 1,
+      "other_sites_without_robots": 4,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 22 (kitting): worked 108% of booked hours, over the booked shift 7 of 8 weeks, uptime 97.6%, remote assists +0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby. The account also runs 4 other site(s) without robots, worth a question on the call."
+    },
+    {
+      "site": "S031",
+      "account": "Synthetic Account 22",
+      "industry": "Beverage co-packer",
+      "task": "Kitting",
+      "score": 62.6,
+      "hours_worked_vs_booked": "111%",
+      "weeks_over_booked_shift": "7 of 8",
+      "uptime": "97.9%",
+      "remote_assist_change_pts": -3.6,
+      "similar_lines_without_robot": 0,
+      "other_sites_without_robots": 4,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 22 (kitting): worked 111% of booked hours, over the booked shift 7 of 8 weeks, uptime 97.9%, remote assists -3.6 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a second robot on this line. The account also runs 4 other site(s) without robots, worth a question on the call."
+    },
+    {
+      "site": "S022",
+      "account": "Synthetic Account 17",
+      "industry": "3PL",
+      "task": "Palletizing",
+      "score": 62.3,
+      "hours_worked_vs_booked": "114%",
+      "weeks_over_booked_shift": "7 of 8",
+      "uptime": "98.9%",
+      "remote_assist_change_pts": 0,
+      "similar_lines_without_robot": 1,
+      "other_sites_without_robots": 0,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 17 (palletizing): worked 114% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.9%, remote assists +0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby."
+    },
+    {
+      "site": "S029",
+      "account": "Synthetic Account 21",
+      "industry": "Beverage co-packer",
+      "task": "Palletizing",
+      "score": 61.7,
+      "hours_worked_vs_booked": "107%",
+      "weeks_over_booked_shift": "5 of 8",
+      "uptime": "97.5%",
+      "remote_assist_change_pts": 1.1,
+      "similar_lines_without_robot": 4,
+      "other_sites_without_robots": 0,
+      "top_drivers": [
+        "runs past its booked hours",
+        "sits next to similar lines with no robot"
+      ],
+      "note": "Synthetic Account 21 (palletizing): worked 107% of booked hours, over the booked shift 5 of 8 weeks, uptime 97.5%, remote assists +1.1 pts over 8 weeks. Mainly flagged because it runs past its booked hours and sits next to similar lines with no robot. Suggested ask: a robot on one of the 4 similar lines nearby."
+    },
+    {
+      "site": "S014",
+      "account": "Synthetic Account 11",
+      "industry": "Household goods",
+      "task": "Pack-out",
+      "score": 60.8,
+      "hours_worked_vs_booked": "113%",
+      "weeks_over_booked_shift": "8 of 8",
+      "uptime": "97.7%",
+      "remote_assist_change_pts": -3.2,
+      "similar_lines_without_robot": 0,
+      "other_sites_without_robots": 0,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 11 (pack-out): worked 113% of booked hours, over the booked shift 8 of 8 weeks, uptime 97.7%, remote assists -3.2 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a second robot on this line."
+    },
+    {
+      "site": "S002",
+      "account": "Synthetic Account 01",
+      "industry": "Cosmetics co-man",
+      "task": "Palletizing",
+      "score": 60.6,
+      "hours_worked_vs_booked": "107%",
+      "weeks_over_booked_shift": "6 of 8",
+      "uptime": "98.3%",
+      "remote_assist_change_pts": 0,
+      "similar_lines_without_robot": 2,
+      "other_sites_without_robots": 0,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 01 (palletizing): worked 107% of booked hours, over the booked shift 6 of 8 weeks, uptime 98.3%, remote assists +0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 2 similar lines nearby."
+    },
+    {
+      "site": "S010",
+      "account": "Synthetic Account 09",
+      "industry": "3PL",
+      "task": "Kitting",
+      "score": 60.4,
+      "hours_worked_vs_booked": "107%",
+      "weeks_over_booked_shift": "7 of 8",
+      "uptime": "98.2%",
+      "remote_assist_change_pts": -1.5,
+      "similar_lines_without_robot": 1,
+      "other_sites_without_robots": 1,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 09 (kitting): worked 107% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.2%, remote assists -1.5 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby. The account also runs 1 other site(s) without robots, worth a question on the call."
+    },
+    {
+      "site": "S004",
+      "account": "Synthetic Account 03",
+      "industry": "Contract packager",
+      "task": "Palletizing",
+      "score": 59.8,
+      "hours_worked_vs_booked": "112%",
+      "weeks_over_booked_shift": "7 of 8",
+      "uptime": "98.3%",
+      "remote_assist_change_pts": -4.0,
+      "similar_lines_without_robot": 0,
+      "other_sites_without_robots": 0,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 03 (palletizing): worked 112% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.3%, remote assists -4.0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a second robot on this line."
+    },
+    {
+      "site": "S009",
+      "account": "Synthetic Account 08",
+      "industry": "Beverage co-packer",
+      "task": "Pack-out",
+      "score": 59.1,
+      "hours_worked_vs_booked": "112%",
+      "weeks_over_booked_shift": "6 of 8",
+      "uptime": "98.5%",
+      "remote_assist_change_pts": -0.5,
+      "similar_lines_without_robot": 1,
+      "other_sites_without_robots": 0,
+      "top_drivers": [
+        "runs past its booked hours",
+        "has gone over its booked shift most weeks"
+      ],
+      "note": "Synthetic Account 08 (pack-out): worked 112% of booked hours, over the booked shift 6 of 8 weeks, uptime 98.5%, remote assists -0.5 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby."
+    }
+  ],
+  "all_sites": [
+    {
+      "site_id": "S008",
+      "account_name": "Synthetic Account 07",
+      "task": "Case picking",
+      "score": 72.0
+    },
+    {
+      "site_id": "S030",
+      "account_name": "Synthetic Account 22",
+      "task": "Kitting",
+      "score": 62.8
+    },
+    {
+      "site_id": "S031",
+      "account_name": "Synthetic Account 22",
+      "task": "Kitting",
+      "score": 62.6
+    },
+    {
+      "site_id": "S022",
+      "account_name": "Synthetic Account 17",
+      "task": "Palletizing",
+      "score": 62.3
+    },
+    {
+      "site_id": "S029",
+      "account_name": "Synthetic Account 21",
+      "task": "Palletizing",
+      "score": 61.7
+    },
+    {
+      "site_id": "S014",
+      "account_name": "Synthetic Account 11",
+      "task": "Pack-out",
+      "score": 60.8
+    },
+    {
+      "site_id": "S002",
+      "account_name": "Synthetic Account 01",
+      "task": "Palletizing",
+      "score": 60.6
+    },
+    {
+      "site_id": "S010",
+      "account_name": "Synthetic Account 09",
+      "task": "Kitting",
+      "score": 60.4
+    },
+    {
+      "site_id": "S004",
+      "account_name": "Synthetic Account 03",
+      "task": "Palletizing",
+      "score": 59.8
+    },
+    {
+      "site_id": "S009",
+      "account_name": "Synthetic Account 08",
+      "task": "Pack-out",
+      "score": 59.1
+    },
+    {
+      "site_id": "S025",
+      "account_name": "Synthetic Account 18",
+      "task": "Depalletizing",
+      "score": 58.8
+    },
+    {
+      "site_id": "S001",
+      "account_name": "Synthetic Account 01",
+      "task": "Palletizing",
+      "score": 58.1
+    },
+    {
+      "site_id": "S051",
+      "account_name": "Synthetic Account 38",
+      "task": "Palletizing",
+      "score": 57.9
+    },
+    {
+      "site_id": "S046",
+      "account_name": "Synthetic Account 35",
+      "task": "Depalletizing",
+      "score": 57.3
+    },
+    {
+      "site_id": "S054",
+      "account_name": "Synthetic Account 40",
+      "task": "Palletizing",
+      "score": 52.9
+    },
+    {
+      "site_id": "S006",
+      "account_name": "Synthetic Account 05",
+      "task": "Case picking",
+      "score": 52.5
+    },
+    {
+      "site_id": "S047",
+      "account_name": "Synthetic Account 36",
+      "task": "Kitting",
+      "score": 52.4
+    },
+    {
+      "site_id": "S026",
+      "account_name": "Synthetic Account 19",
+      "task": "Palletizing",
+      "score": 51.3
+    },
+    {
+      "site_id": "S013",
+      "account_name": "Synthetic Account 11",
+      "task": "Case picking",
+      "score": 50.6
+    },
+    {
+      "site_id": "S023",
+      "account_name": "Synthetic Account 17",
+      "task": "Pack-out",
+      "score": 50.6
+    },
+    {
+      "site_id": "S049",
+      "account_name": "Synthetic Account 37",
+      "task": "Depalletizing",
+      "score": 49.7
+    },
+    {
+      "site_id": "S043",
+      "account_name": "Synthetic Account 33",
+      "task": "Depalletizing",
+      "score": 48.8
+    },
+    {
+      "site_id": "S050",
+      "account_name": "Synthetic Account 38",
+      "task": "Palletizing",
+      "score": 48.5
+    },
+    {
+      "site_id": "S021",
+      "account_name": "Synthetic Account 16",
+      "task": "Case picking",
+      "score": 48.3
+    },
+    {
+      "site_id": "S012",
+      "account_name": "Synthetic Account 10",
+      "task": "Pack-out",
+      "score": 47.9
+    },
+    {
+      "site_id": "S015",
+      "account_name": "Synthetic Account 12",
+      "task": "Palletizing",
+      "score": 47.6
+    },
+    {
+      "site_id": "S017",
+      "account_name": "Synthetic Account 13",
+      "task": "Kitting",
+      "score": 43.1
+    },
+    {
+      "site_id": "S018",
+      "account_name": "Synthetic Account 14",
+      "task": "Palletizing",
+      "score": 42.4
+    },
+    {
+      "site_id": "S019",
+      "account_name": "Synthetic Account 15",
+      "task": "Kitting",
+      "score": 42.1
+    },
+    {
+      "site_id": "S041",
+      "account_name": "Synthetic Account 31",
+      "task": "Pack-out",
+      "score": 41.4
+    },
+    {
+      "site_id": "S011",
+      "account_name": "Synthetic Account 09",
+      "task": "Case picking",
+      "score": 40.4
+    },
+    {
+      "site_id": "S027",
+      "account_name": "Synthetic Account 20",
+      "task": "Palletizing",
+      "score": 38.4
+    },
+    {
+      "site_id": "S038",
+      "account_name": "Synthetic Account 29",
+      "task": "Depalletizing",
+      "score": 36.6
+    },
+    {
+      "site_id": "S040",
+      "account_name": "Synthetic Account 31",
+      "task": "Depalletizing",
+      "score": 33.7
+    },
+    {
+      "site_id": "S005",
+      "account_name": "Synthetic Account 04",
+      "task": "Pack-out",
+      "score": 33.1
+    },
+    {
+      "site_id": "S003",
+      "account_name": "Synthetic Account 02",
+      "task": "Palletizing",
+      "score": 32.0
+    },
+    {
+      "site_id": "S044",
+      "account_name": "Synthetic Account 34",
+      "task": "Case picking",
+      "score": 30.2
+    },
+    {
+      "site_id": "S016",
+      "account_name": "Synthetic Account 13",
+      "task": "Case picking",
+      "score": 27.5
+    },
+    {
+      "site_id": "S048",
+      "account_name": "Synthetic Account 37",
+      "task": "Palletizing",
+      "score": 26.5
+    },
+    {
+      "site_id": "S042",
+      "account_name": "Synthetic Account 32",
+      "task": "Pack-out",
+      "score": 26.1
+    },
+    {
+      "site_id": "S033",
+      "account_name": "Synthetic Account 24",
+      "task": "Pack-out",
+      "score": 24.2
+    },
+    {
+      "site_id": "S032",
+      "account_name": "Synthetic Account 23",
+      "task": "Depalletizing",
+      "score": 22.2
+    },
+    {
+      "site_id": "S034",
+      "account_name": "Synthetic Account 25",
+      "task": "Palletizing",
+      "score": 19.9
+    },
+    {
+      "site_id": "S035",
+      "account_name": "Synthetic Account 26",
+      "task": "Case picking",
+      "score": 17.4
+    },
+    {
+      "site_id": "S053",
+      "account_name": "Synthetic Account 40",
+      "task": "Depalletizing",
+      "score": 17.4
+    },
+    {
+      "site_id": "S020",
+      "account_name": "Synthetic Account 15",
+      "task": "Case picking",
+      "score": 17.0
+    },
+    {
+      "site_id": "S007",
+      "account_name": "Synthetic Account 06",
+      "task": "Pack-out",
+      "score": 13.1
+    }
+  ],
+  "backtest": {
+    "snapshots": 81,
+    "horizon_weeks": 8,
+    "top_k": 10,
+    "auc": 0.75,
+    "base_rate": 0.129,
+    "precision_at_k": 0.26,
+    "lift": 2.01,
+    "n_expansions_in_window": 464,
+    "ten_vs_ten": {
+      "utilization": {
+        "expanded": 1.071,
+        "did_not": 0.947
+      },
+      "overtime_weeks": {
+        "expanded": 5.4,
+        "did_not": 3.2
+      },
+      "avg_uptime": {
+        "expanded": 0.981,
+        "did_not": 0.968
+      },
+      "assist_drop": {
+        "expanded": 0.013,
+        "did_not": 0.016
+      },
+      "changeovers": {
+        "expanded": 10.7,
+        "did_not": 9.4
+      },
+      "similar_lines": {
+        "expanded": 1.9,
+        "did_not": 0.9
+      },
+      "open_sites": {
+        "expanded": 1.2,
+        "did_not": 1.8
+      },
+      "score": {
+        "expanded": 59.2,
+        "did_not": 41.5
+      }
+    },
+    "n_expanded_compared": 10,
+    "n_control": 10
+  },
+  "control": {
+    "auc": 0.538,
+    "precision_at_k": 0.043,
+    "lift": 1.3,
+    "n_fleets": 5
+  },
+  "whitespace": [
+    {
+      "customer": "Productiv",
+      "summary": "Cassie is public only at Productiv's Dallas facility. Productiv also runs a Charlotte campus built around conveyor kitting lines, and a new Gastonia building.",
+      "tutor_known_sites": [
+        {
+          "site": "Dallas, TX (Cassie at the end of the line)",
+          "url": "https://tutorintelligence.com/cassie"
+        }
+      ],
+      "other_sites": [
+        {
+          "site": "Charlotte, NC campus, about 300,000 sq ft",
+          "work": "gift sets, PDQ trays and floor displays on conveyor kitting lines; container receiving and transloading",
+          "url": "https://getproductiv.com/locations/charlotte"
+        },
+        {
+          "site": "Gastonia, NC, new 200,000 sq ft building",
+          "work": "not described separately",
+          "url": "https://getproductiv.com/locations/charlotte"
+        }
+      ]
+    },
+    {
+      "customer": "BetterBody Foods",
+      "summary": "Tutor palletizers run at BetterBody sites in Utah and Massachusetts; which Utah site is not public. Job postings name two Utah sites and one in Massachusetts.",
+      "tutor_known_sites": [
+        {
+          "site": "Utah and Massachusetts facilities (cities not named)",
+          "url": "https://www.automatedwarehouseonline.com/tutor-intelligence-trains-picking-palletizing-robots-data-factory/"
+        }
+      ],
+      "other_sites": [
+        {
+          "site": "Springville, UT warehouse",
+          "work": "order pickers building mixed pallets, which is case-picking work",
+          "url": "https://career.com/job/betterbody-foods-nutrition-llc/order-picker-morning/j202501150912477397463"
+        },
+        {
+          "site": "Lindon, UT production",
+          "work": "filling, capping and labeling lines",
+          "url": "https://www.career.com/job/betterbody-foods-nutrition-llc/machine-operator-night-shift/j202508061030382649010"
+        }
+      ]
+    },
+    {
+      "customer": "Y International",
+      "summary": "Tutor runs four robots at Y International's Lyndhurst, NJ export center. The company also runs an export facility in Brookshire, TX with no public Tutor deployment.",
+      "tutor_known_sites": [
+        {
+          "site": "Lyndhurst, NJ export center (four robots)",
+          "url": "https://www.packworld.com/secondary-packaging/robotics/article/22914613/cpg-exporter-y-international-invests-in-aibased-raas-packaging-automation"
+        }
+      ],
+      "other_sites": [
+        {
+          "site": "Brookshire, TX, about 50,000 sq ft",
+          "work": "packaging and export of dry, frozen and perishable products; the page says it could roughly double in size",
+          "url": "https://yinternational.us.com/who-we-are/our-facility/"
+        }
+      ]
+    }
+  ]
+}

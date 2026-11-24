@@ -1,0 +1,55 @@
+site_id,account_id,task,robots_start,similar_lines_without_robot,scheduled_hours_per_week
+S001,A01,Palletizing,1,4,120
+S002,A01,Palletizing,1,2,40
+S003,A02,Palletizing,2,1,40
+S004,A03,Palletizing,3,0,40
+S005,A04,Pack-out,3,1,40
+S006,A05,Case picking,2,0,120
+S007,A06,Pack-out,1,0,120
+S008,A07,Case picking,1,2,120
+S009,A08,Pack-out,1,1,120
+S010,A09,Kitting,3,1,80
+S011,A09,Case picking,1,4,40
+S012,A10,Pack-out,1,2,80
+S013,A11,Case picking,3,0,40
+S014,A11,Pack-out,2,0,80
+S015,A12,Palletizing,1,4,120
+S016,A13,Case picking,3,1,120
+S017,A13,Kitting,1,4,40
+S018,A14,Palletizing,1,3,120
+S019,A15,Kitting,1,0,80
+S020,A15,Case picking,1,2,40
+S021,A16,Case picking,1,3,40
+S022,A17,Palletizing,1,1,80
+S023,A17,Pack-out,1,0,80
+S024,A18,Kitting,1,3,80
+S025,A18,Depalletizing,1,0,40
+S026,A19,Palletizing,2,4,120
+S027,A20,Palletizing,1,1,120
+S028,A21,Depalletizing,3,2,120
+S029,A21,Palletizing,2,4,120
+S030,A22,Kitting,2,1,40
+S031,A22,Kitting,2,0,40
+S032,A23,Depalletizing,1,1,120
+S033,A24,Pack-out,1,2,40
+S034,A25,Palletizing,1,2,80
+S035,A26,Case picking,3,1,80
+S036,A27,Kitting,2,1,80
+S037,A28,Case picking,1,1,120
+S038,A29,Depalletizing,3,1,40
+S039,A30,Pack-out,1,3,40
+S040,A31,Depalletizing,1,4,40
+S041,A31,Pack-out,3,4,120
+S042,A32,Pack-out,1,4,40
+S043,A33,Depalletizing,3,1,80
+S044,A34,Case picking,2,1,40
+S045,A35,Kitting,1,1,40
+S046,A35,Depalletizing,1,0,80
+S047,A36,Kitting,3,2,40
+S048,A37,Palletizing,1,1,120
+S049,A37,Depalletizing,2,0,80
+S050,A38,Palletizing,2,1,80
+S051,A38,Palletizing,1,0,40
+S052,A39,Depalletizing,3,4,120
+S053,A40,Depalletizing,3,2,40
+S054,A40,Palletizing,1,4,120
