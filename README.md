@@ -2,7 +2,7 @@
 
 A prototype for Tutor Intelligence: use the robot fleet's own data to tell account owners which customer sites are ready for another robot, with a drafted note for each and a backtest that checks whether the signals actually came before past expansions.
 
-**Live page:** https://abdullah-coder25.github.io/tutor-expansion-radar/
+**Live page:** https://abdullah-coder25.github.io/tutor-strategic-projects/
 
 > **All fleet data here is synthetic.** Account names are invented and the numbers come from `radar/generate_synthetic.py`. The results show the pipeline works end to end. They say nothing about what predicts expansion at Tutor; the backtest is how you'd find that out on real data.
 
@@ -10,8 +10,8 @@ A prototype for Tutor Intelligence: use the robot fleet's own data to tell accou
 
 Two more pieces for Tutor, served from the same GitHub Pages site:
 
-- **[PACK EXPO Southeast 2027 campaign plan](https://abdullah-coder25.github.io/tutor-expansion-radar/packexpo/)** (`docs/packexpo/`): a ready-to-run plan for Atlanta, April 12 to 14, 2027, with a ProMat second stop. It covers 57 target accounts, pre-show emails, a three-day meeting grid, an on-floor playbook, a follow-up tracker with CSV export, budget math and sources.
-- **[Workers' comp carrier partnership brief](https://abdullah-coder25.github.io/tutor-expansion-radar/carrier-partnership/)** (`docs/carrier-partnership/`): how carriers' loss-control teams could refer Tutor to the plants with the most hand lifting, while Tutor keeps the direct sale.
+- **[PACK EXPO Southeast 2027 campaign plan](https://abdullah-coder25.github.io/tutor-strategic-projects/packexpo/)** (`docs/packexpo/`): a ready-to-run plan for Atlanta, April 12 to 14, 2027, with a ProMat second stop. It covers 57 target accounts, pre-show emails, a three-day meeting grid, an on-floor playbook, a follow-up tracker with CSV export, budget math and sources.
+- **[Workers' comp carrier partnership brief](https://abdullah-coder25.github.io/tutor-strategic-projects/carrier-partnership/)** (`docs/carrier-partnership/`): how carriers' loss-control teams could refer Tutor to the plants with the most hand lifting, while Tutor keeps the direct sale.
 
 Contact names on these pages are public names and titles only; last names from Apollo's free search are masked.
 
