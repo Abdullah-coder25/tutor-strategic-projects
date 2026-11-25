@@ -1,126 +1,39 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Expansion Radar: a prototype for Tutor Intelligence</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Strategic projects for Tutor Intelligence</title>
 <style>
-:root{--ink:#16181D;--sub:#4A4F57;--mute:#5F6368;--line:#D9DCE1;--bg:#F7F8FA;--acc:#1F5BD8;--accbg:#EEF3FD;--warn:#8A5A00;--warnbg:#FFF6E0}
-*{box-sizing:border-box}body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
-.wrap{max-width:1040px;margin:0 auto;padding:40px 24px 64px}
-header .eyebrow{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px}
-h1{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:36px;line-height:1.1;margin:22px 0 10px}
-h2{font-size:20px;margin:44px 0 6px}
-p.lead{font-size:17px;color:#2B2E35;max-width:800px;margin:0}
-.banner{margin:18px 0 0;background:var(--warnbg);color:var(--warn);border:1px solid #F0D9A0;border-radius:8px;padding:10px 14px;font-size:14px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-.step{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--bg)}
-.step b{display:block;font-size:14px}.step span{font-size:13px;color:var(--sub)}
-.step code{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--acc)}
-.muted{color:var(--mute);font-size:14px;margin:0 0 12px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);border-bottom:1.5px solid var(--ink);padding:8px 10px 8px 0}
-td{border-bottom:1px solid var(--line);padding:9px 10px 9px 0;vertical-align:top}
-tr.site{cursor:pointer}tr.site:hover td{background:var(--bg)}
-.bar{height:8px;border-radius:4px;background:var(--line);width:140px;display:inline-block;vertical-align:middle;margin-right:8px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--acc)}
-tr.detail td{background:var(--accbg);padding:14px 16px}
-.note{font-size:14.5px;margin:0 0 10px}
-.contrib{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px 18px;font-size:13px;color:var(--sub)}
-.contrib div{display:flex;justify-content:space-between;gap:8px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
-.card{border:1px solid var(--line);border-radius:8px;padding:14px 16px}
-.card .big{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:30px;color:var(--acc)}
-.card .small{font-size:13px;color:var(--sub)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.ws{border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:10px}
-.ws h3{margin:0 0 4px;font-size:16px}
-.ws ul{margin:6px 0 0;padding-left:18px;font-size:14px}
-a{color:var(--acc)}
-footer{margin-top:48px;border-top:1px solid var(--line);padding-top:12px;font-size:13px;color:var(--mute)}
-@media(max-width:760px){.steps,.cards,.two{grid-template-columns:1fr}.bar{width:80px}}
-</style></head><body><div class="wrap">
-<nav style="font-size:13px;margin:0 0 14px;color:#5F6368">Also for Tutor: <a href="packexpo/">PACK EXPO Southeast 2027 campaign plan</a> · <a href="carrier-partnership/">Workers' comp carrier partnership brief</a></nav>
-<header>
-<div class="eyebrow"><span>A prototype for Tutor Intelligence</span><span>Abdullah Usman · November 2026</span></div>
-<h1>Expansion Radar: letting the fleet tell sellers where the next robot goes</h1>
-<p class="lead">Nearly a third of the organizations that received Tutor robots in the past year were existing customers adding more. The robots already record the signals that come before that: hours worked past the booked shift, uptime, falling remote assists, idle lines next door. This prototype turns those signals into a weekly list for account owners, with a drafted note for each site and a backtest that checks whether the signals actually came before past expansions.</p>
-<div class="banner"><b>All fleet data on this page is synthetic.</b> Account names are invented and the numbers come from a generator, so the results show that the pipeline works, not what predicts expansion at Tutor. The backtest is the tool for finding that out on real data.</div>
-</header>
-
-<h2>How it works</h2>
-<div class="steps">
-<div class="step"><b>1. Fleet + CRM tables</b><span>Weekly hours booked and worked, uptime, remote-assist share, changeovers; lines and sites per account.</span><br><code>schema.sql</code></div>
-<div class="step"><b>2. Signals in SQL</b><span>Trailing 8-week window per site, computed as of any week so history can be replayed.</span><br><code>signals.sql</code></div>
-<div class="step"><b>3. Score</b><span>Each signal scaled 0 to 1, weighted, summed to 0 to 100. Weights live in one config file.</span><br><code>score.py · config.json</code></div>
-<div class="step"><b>4. Note for the AE</b><span>Template by default; Claude-written with <code>--llm</code>, using only the site's own numbers.</span><br><code>notes.py</code></div>
-</div>
-
-<h2>Sites flagged this week</h2>
-<p class="muted" id="flagsub"></p>
-<table><thead><tr><th>Site</th><th>Account</th><th>Task</th><th>Score</th></tr></thead><tbody id="flags"></tbody></table>
-
-<h2>Does it see expansions coming? (backtest)</h2>
-<p class="muted">Every week, every site is scored using only data up to that week, then checked against which sites added a robot in the next <span id="hz"></span> weeks. The same test runs on a control fleet where expansions are random: if the score looked good there too, it would be fooling us.</p>
-<div class="cards" id="cards"></div>
-<div class="two" style="margin-top:22px">
-<div><h3 style="font-size:15px;margin:0 0 6px">The 10-site test from the pitch</h3>
-<p class="muted">Signals in the 8 weeks before 10 expansions, against 10 sites that never expanded.</p>
-<table><thead><tr><th>Signal</th><th>Before expanding</th><th>Never expanded</th></tr></thead><tbody id="ten"></tbody></table></div>
-<div><h3 style="font-size:15px;margin:0 0 6px">What I'd do with real data</h3>
-<ul style="font-size:14px;padding-left:18px;margin:6px 0">
-<li>Run the 10-site comparison on real sites that did and didn't expand. If no signal separates them, stop here.</li>
-<li>If some do, refit the weights on the full history and keep the ones that hold up in later months.</li>
-<li>Pilot with two account owners for a quarter: how many flagged sites turned into a conversation, a quote, a second robot.</li>
-<li>Track seller time saved, and hours added per flagged account, against accounts worked the usual way.</li>
-</ul></div>
-</div>
-
-<div id="wswrap" style="display:none">
-<h2>Where named customers run sites with no public Tutor deployment (real, public data)</h2>
-<p class="muted">From public sources only, linked below. Tutor knows these accounts far better than any outside list; this is the kind of field the <code>open_sites</code> signal would pull from the CRM.</p>
-<div id="ws"></div>
-</div>
-
-<footer>Code: <a href="https://github.com/Abdullah-coder25/tutor-expansion-radar">github.com/Abdullah-coder25/tutor-expansion-radar</a>. Run <code>python radar/run_all.py</code> to rebuild everything. Expansion share: The Robot Report, Nov 2026.</footer>
-</div>
-<script>
-const R = {"as_of_week": 104, "n_sites": 54, "n_accounts": 40, "weights": {"utilization": 30, "overtime_weeks": 20, "avg_uptime": 10, "assist_drop": 15, "changeovers": 5, "similar_lines": 15, "open_sites": 5}, "flagged": [{"site": "S008", "account": "Synthetic Account 07", "industry": "Household goods", "task": "Case picking", "score": 72.0, "hours_worked_vs_booked": "112%", "weeks_over_booked_shift": "7 of 8", "uptime": "98.3%", "remote_assist_change_pts": -3.0, "similar_lines_without_robot": 2, "other_sites_without_robots": 2, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 07 (case picking): worked 112% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.3%, remote assists -3.0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 2 similar lines nearby. The account also runs 2 other site(s) without robots, worth a question on the call."}, {"site": "S030", "account": "Synthetic Account 22", "industry": "Beverage co-packer", "task": "Kitting", "score": 62.8, "hours_worked_vs_booked": "108%", "weeks_over_booked_shift": "7 of 8", "uptime": "97.6%", "remote_assist_change_pts": 0, "similar_lines_without_robot": 1, "other_sites_without_robots": 4, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 22 (kitting): worked 108% of booked hours, over the booked shift 7 of 8 weeks, uptime 97.6%, remote assists +0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby. The account also runs 4 other site(s) without robots, worth a question on the call."}, {"site": "S031", "account": "Synthetic Account 22", "industry": "Beverage co-packer", "task": "Kitting", "score": 62.6, "hours_worked_vs_booked": "111%", "weeks_over_booked_shift": "7 of 8", "uptime": "97.9%", "remote_assist_change_pts": -3.6, "similar_lines_without_robot": 0, "other_sites_without_robots": 4, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 22 (kitting): worked 111% of booked hours, over the booked shift 7 of 8 weeks, uptime 97.9%, remote assists -3.6 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a second robot on this line. The account also runs 4 other site(s) without robots, worth a question on the call."}, {"site": "S022", "account": "Synthetic Account 17", "industry": "3PL", "task": "Palletizing", "score": 62.3, "hours_worked_vs_booked": "114%", "weeks_over_booked_shift": "7 of 8", "uptime": "98.9%", "remote_assist_change_pts": 0, "similar_lines_without_robot": 1, "other_sites_without_robots": 0, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 17 (palletizing): worked 114% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.9%, remote assists +0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby."}, {"site": "S029", "account": "Synthetic Account 21", "industry": "Beverage co-packer", "task": "Palletizing", "score": 61.7, "hours_worked_vs_booked": "107%", "weeks_over_booked_shift": "5 of 8", "uptime": "97.5%", "remote_assist_change_pts": 1.1, "similar_lines_without_robot": 4, "other_sites_without_robots": 0, "top_drivers": ["runs past its booked hours", "sits next to similar lines with no robot"], "note": "Synthetic Account 21 (palletizing): worked 107% of booked hours, over the booked shift 5 of 8 weeks, uptime 97.5%, remote assists +1.1 pts over 8 weeks. Mainly flagged because it runs past its booked hours and sits next to similar lines with no robot. Suggested ask: a robot on one of the 4 similar lines nearby."}, {"site": "S014", "account": "Synthetic Account 11", "industry": "Household goods", "task": "Pack-out", "score": 60.8, "hours_worked_vs_booked": "113%", "weeks_over_booked_shift": "8 of 8", "uptime": "97.7%", "remote_assist_change_pts": -3.2, "similar_lines_without_robot": 0, "other_sites_without_robots": 0, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 11 (pack-out): worked 113% of booked hours, over the booked shift 8 of 8 weeks, uptime 97.7%, remote assists -3.2 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a second robot on this line."}, {"site": "S002", "account": "Synthetic Account 01", "industry": "Cosmetics co-man", "task": "Palletizing", "score": 60.6, "hours_worked_vs_booked": "107%", "weeks_over_booked_shift": "6 of 8", "uptime": "98.3%", "remote_assist_change_pts": 0, "similar_lines_without_robot": 2, "other_sites_without_robots": 0, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 01 (palletizing): worked 107% of booked hours, over the booked shift 6 of 8 weeks, uptime 98.3%, remote assists +0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 2 similar lines nearby."}, {"site": "S010", "account": "Synthetic Account 09", "industry": "3PL", "task": "Kitting", "score": 60.4, "hours_worked_vs_booked": "107%", "weeks_over_booked_shift": "7 of 8", "uptime": "98.2%", "remote_assist_change_pts": -1.5, "similar_lines_without_robot": 1, "other_sites_without_robots": 1, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 09 (kitting): worked 107% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.2%, remote assists -1.5 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby. The account also runs 1 other site(s) without robots, worth a question on the call."}, {"site": "S004", "account": "Synthetic Account 03", "industry": "Contract packager", "task": "Palletizing", "score": 59.8, "hours_worked_vs_booked": "112%", "weeks_over_booked_shift": "7 of 8", "uptime": "98.3%", "remote_assist_change_pts": -4.0, "similar_lines_without_robot": 0, "other_sites_without_robots": 0, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 03 (palletizing): worked 112% of booked hours, over the booked shift 7 of 8 weeks, uptime 98.3%, remote assists -4.0 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a second robot on this line."}, {"site": "S009", "account": "Synthetic Account 08", "industry": "Beverage co-packer", "task": "Pack-out", "score": 59.1, "hours_worked_vs_booked": "112%", "weeks_over_booked_shift": "6 of 8", "uptime": "98.5%", "remote_assist_change_pts": -0.5, "similar_lines_without_robot": 1, "other_sites_without_robots": 0, "top_drivers": ["runs past its booked hours", "has gone over its booked shift most weeks"], "note": "Synthetic Account 08 (pack-out): worked 112% of booked hours, over the booked shift 6 of 8 weeks, uptime 98.5%, remote assists -0.5 pts over 8 weeks. Mainly flagged because it runs past its booked hours and has gone over its booked shift most weeks. Suggested ask: a robot on one of the 1 similar lines nearby."}], "all_sites": [{"site_id": "S008", "account_name": "Synthetic Account 07", "task": "Case picking", "score": 72.0}, {"site_id": "S030", "account_name": "Synthetic Account 22", "task": "Kitting", "score": 62.8}, {"site_id": "S031", "account_name": "Synthetic Account 22", "task": "Kitting", "score": 62.6}, {"site_id": "S022", "account_name": "Synthetic Account 17", "task": "Palletizing", "score": 62.3}, {"site_id": "S029", "account_name": "Synthetic Account 21", "task": "Palletizing", "score": 61.7}, {"site_id": "S014", "account_name": "Synthetic Account 11", "task": "Pack-out", "score": 60.8}, {"site_id": "S002", "account_name": "Synthetic Account 01", "task": "Palletizing", "score": 60.6}, {"site_id": "S010", "account_name": "Synthetic Account 09", "task": "Kitting", "score": 60.4}, {"site_id": "S004", "account_name": "Synthetic Account 03", "task": "Palletizing", "score": 59.8}, {"site_id": "S009", "account_name": "Synthetic Account 08", "task": "Pack-out", "score": 59.1}, {"site_id": "S025", "account_name": "Synthetic Account 18", "task": "Depalletizing", "score": 58.8}, {"site_id": "S001", "account_name": "Synthetic Account 01", "task": "Palletizing", "score": 58.1}, {"site_id": "S051", "account_name": "Synthetic Account 38", "task": "Palletizing", "score": 57.9}, {"site_id": "S046", "account_name": "Synthetic Account 35", "task": "Depalletizing", "score": 57.3}, {"site_id": "S054", "account_name": "Synthetic Account 40", "task": "Palletizing", "score": 52.9}, {"site_id": "S006", "account_name": "Synthetic Account 05", "task": "Case picking", "score": 52.5}, {"site_id": "S047", "account_name": "Synthetic Account 36", "task": "Kitting", "score": 52.4}, {"site_id": "S026", "account_name": "Synthetic Account 19", "task": "Palletizing", "score": 51.3}, {"site_id": "S013", "account_name": "Synthetic Account 11", "task": "Case picking", "score": 50.6}, {"site_id": "S023", "account_name": "Synthetic Account 17", "task": "Pack-out", "score": 50.6}, {"site_id": "S049", "account_name": "Synthetic Account 37", "task": "Depalletizing", "score": 49.7}, {"site_id": "S043", "account_name": "Synthetic Account 33", "task": "Depalletizing", "score": 48.8}, {"site_id": "S050", "account_name": "Synthetic Account 38", "task": "Palletizing", "score": 48.5}, {"site_id": "S021", "account_name": "Synthetic Account 16", "task": "Case picking", "score": 48.3}, {"site_id": "S012", "account_name": "Synthetic Account 10", "task": "Pack-out", "score": 47.9}, {"site_id": "S015", "account_name": "Synthetic Account 12", "task": "Palletizing", "score": 47.6}, {"site_id": "S017", "account_name": "Synthetic Account 13", "task": "Kitting", "score": 43.1}, {"site_id": "S018", "account_name": "Synthetic Account 14", "task": "Palletizing", "score": 42.4}, {"site_id": "S019", "account_name": "Synthetic Account 15", "task": "Kitting", "score": 42.1}, {"site_id": "S041", "account_name": "Synthetic Account 31", "task": "Pack-out", "score": 41.4}, {"site_id": "S011", "account_name": "Synthetic Account 09", "task": "Case picking", "score": 40.4}, {"site_id": "S027", "account_name": "Synthetic Account 20", "task": "Palletizing", "score": 38.4}, {"site_id": "S038", "account_name": "Synthetic Account 29", "task": "Depalletizing", "score": 36.6}, {"site_id": "S040", "account_name": "Synthetic Account 31", "task": "Depalletizing", "score": 33.7}, {"site_id": "S005", "account_name": "Synthetic Account 04", "task": "Pack-out", "score": 33.1}, {"site_id": "S003", "account_name": "Synthetic Account 02", "task": "Palletizing", "score": 32.0}, {"site_id": "S044", "account_name": "Synthetic Account 34", "task": "Case picking", "score": 30.2}, {"site_id": "S016", "account_name": "Synthetic Account 13", "task": "Case picking", "score": 27.5}, {"site_id": "S048", "account_name": "Synthetic Account 37", "task": "Palletizing", "score": 26.5}, {"site_id": "S042", "account_name": "Synthetic Account 32", "task": "Pack-out", "score": 26.1}, {"site_id": "S033", "account_name": "Synthetic Account 24", "task": "Pack-out", "score": 24.2}, {"site_id": "S032", "account_name": "Synthetic Account 23", "task": "Depalletizing", "score": 22.2}, {"site_id": "S034", "account_name": "Synthetic Account 25", "task": "Palletizing", "score": 19.9}, {"site_id": "S035", "account_name": "Synthetic Account 26", "task": "Case picking", "score": 17.4}, {"site_id": "S053", "account_name": "Synthetic Account 40", "task": "Depalletizing", "score": 17.4}, {"site_id": "S020", "account_name": "Synthetic Account 15", "task": "Case picking", "score": 17.0}, {"site_id": "S007", "account_name": "Synthetic Account 06", "task": "Pack-out", "score": 13.1}], "backtest": {"snapshots": 81, "horizon_weeks": 8, "top_k": 10, "auc": 0.75, "base_rate": 0.129, "precision_at_k": 0.26, "lift": 2.01, "n_expansions_in_window": 464, "ten_vs_ten": {"utilization": {"expanded": 1.071, "did_not": 0.947}, "overtime_weeks": {"expanded": 5.4, "did_not": 3.2}, "avg_uptime": {"expanded": 0.981, "did_not": 0.968}, "assist_drop": {"expanded": 0.013, "did_not": 0.016}, "changeovers": {"expanded": 10.7, "did_not": 9.4}, "similar_lines": {"expanded": 1.9, "did_not": 0.9}, "open_sites": {"expanded": 1.2, "did_not": 1.8}, "score": {"expanded": 59.2, "did_not": 41.5}}, "n_expanded_compared": 10, "n_control": 10}, "control": {"auc": 0.538, "precision_at_k": 0.043, "lift": 1.3, "n_fleets": 5}, "whitespace": [{"customer": "Productiv", "summary": "Cassie is public only at Productiv's Dallas facility. Productiv also runs a Charlotte campus built around conveyor kitting lines, and a new Gastonia building.", "tutor_known_sites": [{"site": "Dallas, TX (Cassie at the end of the line)", "url": "https://tutorintelligence.com/cassie"}], "other_sites": [{"site": "Charlotte, NC campus, about 300,000 sq ft", "work": "gift sets, PDQ trays and floor displays on conveyor kitting lines; container receiving and transloading", "url": "https://getproductiv.com/locations/charlotte"}, {"site": "Gastonia, NC, new 200,000 sq ft building", "work": "not described separately", "url": "https://getproductiv.com/locations/charlotte"}]}, {"customer": "BetterBody Foods", "summary": "Tutor palletizers run at BetterBody sites in Utah and Massachusetts; which Utah site is not public. Job postings name two Utah sites and one in Massachusetts.", "tutor_known_sites": [{"site": "Utah and Massachusetts facilities (cities not named)", "url": "https://www.automatedwarehouseonline.com/tutor-intelligence-trains-picking-palletizing-robots-data-factory/"}], "other_sites": [{"site": "Springville, UT warehouse", "work": "order pickers building mixed pallets, which is case-picking work", "url": "https://career.com/job/betterbody-foods-nutrition-llc/order-picker-morning/j202501150912477397463"}, {"site": "Lindon, UT production", "work": "filling, capping and labeling lines", "url": "https://www.career.com/job/betterbody-foods-nutrition-llc/machine-operator-night-shift/j202508061030382649010"}]}, {"customer": "Y International", "summary": "Tutor runs four robots at Y International's Lyndhurst, NJ export center. The company also runs an export facility in Brookshire, TX with no public Tutor deployment.", "tutor_known_sites": [{"site": "Lyndhurst, NJ export center (four robots)", "url": "https://www.packworld.com/secondary-packaging/robotics/article/22914613/cpg-exporter-y-international-invests-in-aibased-raas-packaging-automation"}], "other_sites": [{"site": "Brookshire, TX, about 50,000 sq ft", "work": "packaging and export of dry, frozen and perishable products; the page says it could roughly double in size", "url": "https://yinternational.us.com/who-we-are/our-facility/"}]}]};
-const pct = x => (x*100).toFixed(0)+'%';
-document.getElementById('flagsub').textContent =
-  `The 10 highest-scoring of ${R.n_sites} synthetic sites across ${R.n_accounts} accounts in week ${R.as_of_week}, leaving out sites that added a robot in the last 12 weeks. Click a row for the note and what drove the score.`;
-const tb = document.getElementById('flags');
-R.flagged.forEach((f,i) => {
-  const tr = document.createElement('tr'); tr.className='site';
-  tr.innerHTML = `<td>${f.site}</td><td>${f.account}</td><td>${f.task}</td><td><span class="bar"><i style="width:${f.score}%"></i></span>${f.score}</td>`;
-  const d = document.createElement('tr'); d.className='detail'; d.style.display = i===0?'':'none';
-  const s = R.all_sites.find(x=>x.site_id===f.site);
-  d.innerHTML = `<td colspan="4"><p class="note">${f.note}</p><div class="contrib">
-    <div><span>Hours worked vs booked</span><b>${f.hours_worked_vs_booked}</b></div>
-    <div><span>Weeks over booked shift</span><b>${f.weeks_over_booked_shift}</b></div>
-    <div><span>Uptime</span><b>${f.uptime}</b></div>
-    <div><span>Remote assists, 8-wk change</span><b>${f.remote_assist_change_pts>0?'+':''}${f.remote_assist_change_pts} pts</b></div>
-    <div><span>Similar lines, no robot</span><b>${f.similar_lines_without_robot}</b></div>
-    <div><span>Other sites, no robots</span><b>${f.other_sites_without_robots}</b></div></div></td>`;
-  tr.onclick = () => d.style.display = d.style.display ? '' : 'none';
-  tb.appendChild(tr); tb.appendChild(d);
-});
-const B = R.backtest, C = R.control;
-document.getElementById('hz').textContent = B.horizon_weeks;
-document.getElementById('cards').innerHTML = `
- <div class="card"><div class="big">${B.auc}</div><div class="small">Chance an expanding site outranks a non-expanding one (AUC). 0.5 is a coin flip. Random-expansion control, average of ${C.n_fleets} fleets: <b>${C.auc}</b>.</div></div>
- <div class="card"><div class="big">${pct(B.precision_at_k)}</div><div class="small">Of the top ${B.top_k} flagged sites each week, share that expanded within ${B.horizon_weeks} weeks, vs <b>${pct(B.base_rate)}</b> for all sites.</div></div>
- <div class="card"><div class="big">${B.lift}x</div><div class="small">Lift over working sites at random, across ${B.snapshots} weekly snapshots. Control: <b>${C.lift}x</b>.</div></div>`;
-const names = {utilization:'Hours worked vs booked',overtime_weeks:'Weeks over booked shift (of 8)',avg_uptime:'Uptime',assist_drop:'Drop in remote-assist share',changeovers:'SKU changeovers / week',similar_lines:'Similar lines, no robot',open_sites:'Other sites, no robots',score:'Score'};
-const fmt = (k,v) => ['utilization','avg_uptime','assist_drop'].includes(k) ? (v*100).toFixed(1)+'%' : v;
-document.getElementById('ten').innerHTML = Object.entries(B.ten_vs_ten).map(([k,v]) =>
-  `<tr><td>${names[k]}</td><td>${fmt(k,v.expanded)}</td><td>${fmt(k,v.did_not)}</td></tr>`).join('');
-if (R.whitespace && R.whitespace.length) {
-  document.getElementById('wswrap').style.display='';
-  document.getElementById('ws').innerHTML = R.whitespace.map(c => `<div class="ws"><h3>${c.customer}</h3>
-   <div class="muted" style="margin:0">${c.summary||''}</div><ul>
-   ${(c.tutor_known_sites||[]).map(s=>`<li><b>Tutor known:</b> ${s.site} (<a href="${s.url}">source</a>)</li>`).join('')}
-   ${(c.other_sites||[]).map(s=>`<li>${s.site}${s.work?': '+s.work:''} (<a href="${s.url}">source</a>)</li>`).join('')}
-   </ul></div>`).join('');
-}
-</script></body></html>
+@font-face{font-family:'IBM Plex Sans';font-weight:400;src:url('packexpo/fonts/IBMPlexSans-Regular.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;src:url('packexpo/fonts/IBMPlexSans-SemiBold.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Sans Condensed';font-weight:600;src:url('packexpo/fonts/IBMPlexSansCondensed-SemiBold.woff2') format('woff2')}
+body{margin:0;background:#F6F7F8;color:#16181D;font-family:'IBM Plex Sans',system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:56px 24px}
+.eyebrow{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5F6368}
+h1{font-family:'IBM Plex Sans Condensed','IBM Plex Sans',sans-serif;font-weight:600;font-size:34px;line-height:1.15;margin:8px 0 12px}
+p.lede{font-size:16px;line-height:1.55;color:#2B2E35;margin:0 0 32px}
+a.card{display:block;background:#fff;border:1px solid #D9DCE1;border-radius:10px;padding:20px 22px;margin-bottom:14px;text-decoration:none;color:inherit}
+a.card:hover{border-color:#0F766E}
+.card h2{font-family:'IBM Plex Sans Condensed','IBM Plex Sans',sans-serif;font-weight:600;font-size:20px;margin:0 0 6px;color:#0F766E}
+.card p{margin:0;font-size:14px;line-height:1.5;color:#2B2E35}
+footer{margin-top:28px;font-size:12px;color:#5F6368}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">Prepared for Tutor Intelligence · Abdullah Usman</div>
+<h1>Two new growth plays for Tutor's CPG business</h1>
+<p class="lede">Two ways to bring Tutor more qualified CPG plants and co-packers: one through a trade show, one through the insurers already inside those plants.</p>
+<a class="card" href="packexpo/">
+<h2>PACK EXPO Southeast 2027 campaign plan</h2>
+<p>A ready-to-run plan for Atlanta, April 12 to 14, 2027: target accounts, pre-show outreach, a three-day meeting schedule, an on-floor playbook, a follow-up tracker, and the budget.</p>
+</a>
+<a class="card" href="carrier-partnership/">
+<h2>Workers' comp carrier partnership</h2>
+<p>A two-page brief on how insurers' risk-control consultants could become a steady source of warm introductions to the plants with the most hand lifting, while Tutor keeps the direct sale.</p>
+</a>
+<footer>Independent work by Abdullah Usman. Contact names show public names and titles only.</footer>
+</main>
+</body>
+</html>
