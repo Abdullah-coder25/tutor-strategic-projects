@@ -6,6 +6,15 @@ A prototype for Tutor Intelligence: use the robot fleet's own data to tell accou
 
 > **All fleet data here is synthetic.** Account names are invented and the numbers come from `radar/generate_synthetic.py`. The results show the pipeline works end to end. They say nothing about what predicts expansion at Tutor; the backtest is how you'd find that out on real data.
 
+## Also in this repo
+
+Two more pieces for Tutor, served from the same GitHub Pages site:
+
+- **[PACK EXPO Southeast 2027 campaign plan](https://abdullah-coder25.github.io/tutor-expansion-radar/packexpo/)** (`docs/packexpo/`): a ready-to-run plan for Atlanta, April 12 to 14, 2027, with a ProMat second stop. It covers 57 target accounts, pre-show emails, a three-day meeting grid, an on-floor playbook, a follow-up tracker with CSV export, a mock meeting recap, a no-booth version, budget math and sources.
+- **[Workers' comp carrier partnership one-pager](https://abdullah-coder25.github.io/tutor-expansion-radar/carrier-partnership/)** (`docs/carrier-partnership/`): how carriers' loss-control teams could refer Tutor to the plants with the most hand lifting, while Tutor keeps the direct sale.
+
+Contact names on these pages are public names and titles only; last names from Apollo's free search are masked.
+
 ## Why
 
 Nearly a third of the organizations that received Tutor robots in the past 12 months were existing customers installing more ([The Robot Report, Nov 2026](https://www.therobotreport.com/?p=590098)). The robots already log the signals that tend to come before that, such as running past their booked hours, high uptime and fewer remote assists. Today that data likely sits with engineering while expansion runs through relationships.
