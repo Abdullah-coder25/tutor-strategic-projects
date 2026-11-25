@@ -42,7 +42,7 @@ tr.detail td{background:var(--accbg);padding:14px 16px}
 a{color:var(--acc)}
 footer{margin-top:48px;border-top:1px solid var(--line);padding-top:12px;font-size:13px;color:var(--mute)}
 @media(max-width:760px){.steps,.cards,.two{grid-template-columns:1fr}.bar{width:80px}}
-</style></head><body><div class="wrap"><nav style="font-size:13px;margin:0 0 14px;color:#5F6368">Also for Tutor: <a href="packexpo/">PACK EXPO Southeast 2027 campaign plan</a> · <a href="carrier-partnership/">Workers' comp carrier partnership one-pager</a></nav>
+</style></head><body><div class="wrap"><nav style="font-size:13px;margin:0 0 14px;color:#5F6368">Also for Tutor: <a href="packexpo/">PACK EXPO Southeast 2027 campaign plan</a> · <a href="carrier-partnership/">Workers' comp carrier partnership brief</a></nav>
 <header>
 <div class="eyebrow"><span>A prototype for Tutor Intelligence</span><span>Abdullah Usman · November 2026</span></div>
 <h1>Expansion Radar: letting the fleet tell sellers where the next robot goes</h1>

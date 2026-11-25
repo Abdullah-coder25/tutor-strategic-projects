@@ -11,7 +11,7 @@ A prototype for Tutor Intelligence: use the robot fleet's own data to tell accou
 Two more pieces for Tutor, served from the same GitHub Pages site:
 
 - **[PACK EXPO Southeast 2027 campaign plan](https://abdullah-coder25.github.io/tutor-expansion-radar/packexpo/)** (`docs/packexpo/`): a ready-to-run plan for Atlanta, April 12 to 14, 2027, with a ProMat second stop. It covers 57 target accounts, pre-show emails, a three-day meeting grid, an on-floor playbook, a follow-up tracker with CSV export, budget math and sources.
-- **[Workers' comp carrier partnership one-pager](https://abdullah-coder25.github.io/tutor-expansion-radar/carrier-partnership/)** (`docs/carrier-partnership/`): how carriers' loss-control teams could refer Tutor to the plants with the most hand lifting, while Tutor keeps the direct sale.
+- **[Workers' comp carrier partnership brief](https://abdullah-coder25.github.io/tutor-expansion-radar/carrier-partnership/)** (`docs/carrier-partnership/`): how carriers' loss-control teams could refer Tutor to the plants with the most hand lifting, while Tutor keeps the direct sale.
 
 Contact names on these pages are public names and titles only; last names from Apollo's free search are masked.
 
